@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="error-container">
+        <div class="error-details">
+            <h4>
+                Apologies for this but an error occurred
+            </h4>
+          <div class="error-message" [ngSwitch]="errorCode">
+            <div *ngSwitchCase="404" class="not-found-container">
+                <p>The page you asked for couldn't be found</p>
+                <a [routerLink]="['/']">Click here to head back to the gallery and select another image</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

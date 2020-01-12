@@ -1,0 +1,32 @@
+<div class="container mt-md-5 mt-3 main pb-5">
+  <div *ngIf="(piece | async)?.main_image" class="row">
+    <div class="col-12">
+      <a [routerLink]="['/']" class="secondary-colour">
+          <i class="fa fas fa-chevron-left fa-5x fa-fw left-icon"></i>Back to Gallery
+      </a>
+      <h2 class="mt-2">{{(piece | async)?.title}}</h2>
+      <h5 class="secondary-colour">
+        <div class="row">
+          <span class="col-auto mb-1"><i class="fa fas fa-calendar fa-5x fa-fw left-icon pr-4"></i>{{(piece | async)?.year}}</span>
+          <span class="col-auto mb-1"><i class="fa fas fa-map fa-5x fa-fw left-icon pr-4"></i>{{(piece | async)?.location}}</span>
+          <span class="col-auto mb-1"><i class="fa fas fa-paint-brush fa-5x fa-fw left-icon pr-4"></i>{{(piece | async)?.medium}}</span>
+        </div>
+       </h5>
+      <div class="main-img-container">
+          <img (click)="modalOpen = !modalOpen" class="main-img" *ngIf="(piece | async)?.main_image" [src]="(piece | async)?.main_image"/>
+          <p class="enlarge-text secondary-colour"><i class="fa fas fa-search-plus fa-5x fa-fw left-icon pr-3"></i>Click on image to view fullscreen</p>
+      </div>
+      <h3>About this piece</h3>
+      <div [innerHTML]="(piece | async)?.description | sanitiseHTML"></div>
+      <section *ngIf="(piece | async)?.project_content">
+        <div [innerHTML]="(piece | async)?.project_content | sanitiseHTML"></div>
+      </section>
+    </div>
+  </div>
+  <app-loading *ngIf="!(piece | async)?.main_image"></app-loading>
+  <app-image-viewer [open]="modalOpen" [imageURL]="(piece | async)?.full_image" (close)="modalOpen = !modalOpen"></app-image-viewer>
+
+
+
+
+

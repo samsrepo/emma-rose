@@ -1,0 +1,32 @@
+p {
+  text-align: center;
+}
+
+.powered-container p {
+  font-family: 'Georgia', serif;
+}
+
+.rights-text {
+  font-family: 'Georgia', serif;
+  margin-bottom: 0;
+}
+
+.cms-image-container {
+  height: 40px;
+}
+
+.sam-text {
+  font-family: 'Palanquin', sans-serif;
+}
+
+img {
+  display: block;
+  max-height:100%;
+  max-width:100%;
+}
+
+.powered-container {
+  width: fit-content;
+  height: 50px;
+  margin: auto;
+}

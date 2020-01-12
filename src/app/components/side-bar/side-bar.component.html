@@ -1,0 +1,38 @@
+<div class="title-container">
+  <div class="icon-container" [routerLink]="['/']">
+    <img src="../../../assets/images/logo.png"/>
+  </div>
+  <div class="text-container" [routerLink]="['/']">
+    <h3>Emma Rose</h3>
+    <p>Artist | Writer | Illustrator</p>
+  </div>
+  <div class="button-container d-md-none">
+    <button class="toggle-button" (click)="showInfo = !showInfo">
+        <i class="fa fas fa-chevron-down fa-5x" *ngIf="!showInfo" aria-hidden="true"> </i>
+        <i class="fa fas fa-chevron-up fa-5x" *ngIf="showInfo" aria-hidden="true"> </i>
+    </button>
+  </div>
+</div>
+<div [@slideInOut] *ngIf="showInfo" class="about-container" [@.disabled]="!mobile">
+    <div class="divider-container" *ngIf="showInfo">
+        <img src="../../../assets/images/divider.png"/>
+    </div>
+    <section *ngIf="showInfo">
+      <div [innerHTML]="(aboutData | async)?.about_text | sanitiseHTML"></div>
+    <h6  *ngIf="(aboutData | async)?.facebook_link">
+        <a href="https://www.facebook.com/{{(aboutData | async)?.facebook_link}}" target="_blank">
+          <i class="fa fas fa-facebook-square fa-5x fa-fw social-icon pr-4"></i>/{{(aboutData | async)?.facebook_link}}
+        </a>
+      </h6>
+      <h6 *ngIf="(aboutData | async)?.instagram_link">
+          <a href="https://www.instagram.com/{{(aboutData | async)?.instagram_link}}" target="_blank">
+            <i class="fa fas fa-instagram fa-5x fa-fw social-icon pr-4"></i>@{{(aboutData | async)?.instagram_link}}
+          </a>
+      </h6>
+      <h6 *ngIf="(aboutData | async)?.website_link">
+          <a href="https://{{(aboutData | async)?.website_link}}" target="_blank">
+            <i class="fa fas fa-globe fa-5x fa-fw social-icon pr-4"></i>{{(aboutData | async)?.website_link}}
+          </a>
+      </h6>
+    </section>
+</div>

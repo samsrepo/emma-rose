@@ -1,0 +1,60 @@
+/* Set the width of the left side bar */
+.side-bar {
+  width: 285px;
+}
+
+/* Position the divider line on the right of side bar */
+.right-divider {
+  position: absolute;
+  height: 100vh;
+  width: 5px;
+  top: 0;
+  right: -20px;
+}
+/* Set the divider line properties */
+.line {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 90%;
+  width: 100%;
+  background-color: black;
+}
+
+/* Display the non mobile footer in fixed position */
+.footer-sidebar {
+  position: fixed;
+  bottom: 20px;
+  width: 285px;
+}
+
+/* Set the mobile footer to flow with content */
+.mobile-footer {
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* For bottom page fade effect, set fade to always be on bottom of screen */
+.fade-container {
+  width: 100%;
+  height: 30px;
+  position: fixed;
+  bottom: 0;
+}
+
+/* Define the fade gradient */
+.fade-container:after {
+  content  : "";
+  position : absolute;
+  z-index  : 1;
+  bottom   : 0;
+  left     : 0;
+  pointer-events   : none;
+  background-image : linear-gradient(to bottom,
+                    rgba(255,255,255, 0),
+                    rgba(255,255,255, 1) 90%);
+  width    : 100%;
+  height   : 4em;
+}

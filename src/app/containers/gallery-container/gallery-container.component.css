@@ -1,0 +1,12 @@
+.thumbnail-container {
+  width: 100%;
+  height: fit-content;
+  cursor: pointer;
+}
+
+/* Setup image so it resizes whilst maintaining aspect ratio */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

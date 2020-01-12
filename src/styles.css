@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Default the text to Georgia */
+ h1,h2,h3,h4,h5,h6,p, a {
+  font-family: 'Georgia', serif;
+ }
+
+ /* Apply styles for butter CMS content */
+ @media only screen and (min-width: 720px) {
+  .butter-float-left {
+    float: left;
+    margin: 0px 10px 10px 0px;
+  }
+
+  .butter-float-right {
+    float: right;
+    margin: 0px 0px 10px 10px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Stops scroll bars from shifting elements */
+html {
+  overflow-y: scroll;
+}

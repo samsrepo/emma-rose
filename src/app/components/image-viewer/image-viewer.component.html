@@ -1,0 +1,8 @@
+<div *ngIf="open" class="modal animated zoomIn">
+    <div class="modal-content">
+      <a class="close-modal" (click)="close.emit()">
+          <i class="fa fas fa-chevron-left fa-5x fa-fw left-icon"></i>Close Image
+      </a>
+    <pinch-zoom class="zoom-container"><img class="main-img" [src]="imageURL"/></pinch-zoom>
+    </div>
+  </div>

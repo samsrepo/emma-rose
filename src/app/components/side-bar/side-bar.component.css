@@ -1,0 +1,108 @@
+/* Main container for header logo/text */
+.title-container {
+  height: 80px;
+  width: 100%;
+  padding-top: 20px;
+  cursor: pointer;
+  background-color: white;
+  z-index: 9999;
+  position: relative;
+}
+
+h5 {
+  line-height: 1.3;
+}
+
+a {
+  color: black;
+}
+
+.social-icon {
+  font-size: 15px;
+}
+
+/* Container for main logo */
+.icon-container {
+  width: 80px;
+  height: 80px;
+  float: left;
+}
+
+/* Container for main text */
+.text-container {
+  float: left;
+  margin-left: 15px;
+}
+
+.about-container {
+  z-index: -1;
+}
+
+p {
+  margin-top: 0;
+}
+
+h3 {
+  margin-bottom: 0;
+  margin-top: 9px;
+  font-family: 'PT Serif', serif;
+}
+
+/* Set all images to keep aspect ratio */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Container to hold decorative line divider */
+.divider-container {
+  display: block;
+  width: 85%;
+  margin: auto;
+}
+
+/* Container to hold toggle about content for mobile views */
+.button-container {
+  float: right;
+  margin-top: 20px;
+}
+
+/* Aforementioned toggle about view button */
+.toggle-button {
+  border: none;
+  background: none;
+  font-size: 6px;
+}
+
+/* Shrink some of the above classes when in mobile view */
+@media only screen and (max-width: 760px) {
+  .divider-container {
+    width: 200px;
+  }
+
+  .icon-container {
+    width: 60px;
+    height: 60px;
+    float: left;
+  }
+
+  .title-container {
+    height: 60px;
+    padding-top: 20px;
+  }
+
+  .text-container h3 {
+    font-size: 20px;
+    margin-top: 7px;
+  }
+
+  .text-container {
+    font-size: 14px;
+  }
+
+  .button-container {
+    margin-top: 10px;
+  }
+
+}

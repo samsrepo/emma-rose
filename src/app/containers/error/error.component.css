@@ -1,0 +1,22 @@
+a {
+  color: #717171;
+}
+
+.error-container {
+  width: 100%;
+  margin: auto;
+  height: 100vh;
+}
+
+.error-details {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+h4 {
+  color: #b14545;
+ font-weight: 900;
+}
