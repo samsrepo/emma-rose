@@ -25,6 +25,7 @@
     "buttercms": "^1.2.1",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
+    "ngx-masonry": "^1.1.4",
     "ngx-pinch-zoom": "^2.3.4",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",

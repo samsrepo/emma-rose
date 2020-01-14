@@ -15,6 +15,7 @@ import { ImageViewerComponent } from './components/image-viewer/image-viewer.com
 import { AppErrorHandler } from './error-handler';
 import { ErrorComponent } from './containers/error/error.component';
 import { PinchZoomModule } from 'ngx-pinch-zoom';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { PinchZoomModule } from 'ngx-pinch-zoom';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    PinchZoomModule
+    PinchZoomModule,
+    NgxMasonryModule
   ],
   providers: [SanitiseHtmlPipe, AppErrorHandler],
   bootstrap: [AppComponent]

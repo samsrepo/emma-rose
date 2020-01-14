@@ -16,7 +16,6 @@ export class ImageViewerComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

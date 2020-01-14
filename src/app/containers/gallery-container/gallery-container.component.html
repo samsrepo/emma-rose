@@ -1,7 +1,14 @@
 <div class="container">
   <div class="row mt-3">
-    <div *ngFor="let piece of pieces | async" class="thumbnail-container col-md-6 col-12 col-lg-4 mb-3 mt-3 animated fadeIn">
+    <!-- <div *ngFor="let piece of pieces | async" class="thumbnail-container col-md-6 col-12 col-lg-4 mb-3 mt-3 animated fadeIn">
         <img [routerLink]="['/piece', piece.slug]" [src]="piece.thumbnail"/>
+    </div> -->
+    <div class="col-12">
+      <ngx-masonry [useImagesLoaded]="true">
+        <div ngxMasonryItem class="masonry-item" *ngFor="let piece of pieces | async">
+          <img [routerLink]="['/piece', piece.slug]" [src]="piece.thumbnail"/>
+       </div>
+      </ngx-masonry>
     </div>
   </div>
   <app-loading *ngIf="(pieces | async) == null"></app-loading>

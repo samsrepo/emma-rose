@@ -10,3 +10,21 @@ img {
   width: 100%;
   height: auto;
 }
+
+.masonry-item {
+  width: 33%;
+  padding: 15px;
+}
+
+@media only screen and (max-width: 991px) {
+  .masonry-item {
+    width: 100% !important;
+  }
+}
+
+/* @media only screen and (max-width: 991px) {
+  .masonry-item {
+    width: 50%;
+  }
+} */
+
