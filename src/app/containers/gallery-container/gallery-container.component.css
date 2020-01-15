@@ -11,13 +11,17 @@ img {
   height: auto;
 }
 
-.masonry-item {
+.grid-item {
   width: 33%;
   padding: 15px;
 }
 
+.featured-item {
+  width: 66%;
+}
+
 @media only screen and (max-width: 991px) {
-  .masonry-item {
+  .grid-item {
     width: 100% !important;
   }
 }

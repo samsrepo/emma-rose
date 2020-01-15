@@ -9,4 +9,7 @@ export interface Piece {
   medium:  string;
   description:  string;
   project_content: string;
+  image_order: number;
+  project_title: string;
+  featured: boolean;
 }
