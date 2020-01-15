@@ -9,6 +9,11 @@ img {
   display: block;
   width: 100%;
   height: auto;
+  cursor: pointer;
+}
+
+img:hover {
+  opacity: 0.8;
 }
 
 .grid-item {

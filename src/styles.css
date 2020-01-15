@@ -27,3 +27,10 @@ body {
 html {
   overflow-y: scroll;
 }
+
+/* Applies styles to images from ButterCSM rich text content */
+p img {
+  max-height:100%;
+  max-width:100%;
+  margin: auto;
+}

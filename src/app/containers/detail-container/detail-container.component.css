@@ -43,6 +43,20 @@ h5 {
   font-size: 15px;
 }
 
+@media only screen and (max-width: 576px) {
+  h5 {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+}
+
 @media only screen and (max-width: 760px) {
   img {
     display: block;

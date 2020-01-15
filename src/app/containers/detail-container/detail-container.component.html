@@ -16,11 +16,11 @@
           <img (click)="modalOpen = !modalOpen" class="main-img" *ngIf="(piece | async)?.main_image" [src]="(piece | async)?.main_image"/>
           <p class="enlarge-text secondary-colour"><i class="fa fas fa-search-plus fa-5x fa-fw left-icon pr-3"></i>Click on image to view fullscreen</p>
       </div>
-      <h3 *ngIf="!(piece | async).project_content">About this piece</h3>
-      <div *ngIf="!(piece | async).project_content" [innerHTML]="(piece | async)?.description | sanitiseHTML"></div>
-    <h3 *ngIf="(piece | async).project_title">{{(piece | async).project_title}}</h3>
+      <h3 *ngIf="!(piece | async)?.project_content">About this piece</h3>
+      <div *ngIf="!(piece | async)?.project_content" [innerHTML]="(piece | async)?.description | sanitiseHTML"></div>
+    <h3 *ngIf="(piece | async)?.project_title">{{(piece | async)?.project_title}}</h3>
       <section *ngIf="(piece | async)?.project_content">
-        <div [innerHTML]="(piece | async)?.project_content | sanitiseHTML"></div>
+        <div class="project-container" [innerHTML]="(piece | async)?.project_content | sanitiseHTML"></div>
       </section>
     </div>
   </div>
