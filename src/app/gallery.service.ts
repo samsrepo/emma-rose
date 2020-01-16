@@ -19,9 +19,9 @@ export class GalleryService {
   constructor(private errorHandler: AppErrorHandler) {}
 
   // Fetch all items found under the 'gallery' page type in butter CMS
-  public getPieces(): Observable<Piece[]> {
+  public getPieces(page): Observable<{pieces: Piece[], nextPage: number}> {
     return this.fromPromise(
-      butterService.page.list('gallery')).pipe(
+      butterService.page.list('gallery', {page})).pipe(
         map(resp => {
           const mappedPieces = [];
           for (const i in resp.data.data) {
@@ -30,7 +30,7 @@ export class GalleryService {
               mappedPieces.push(this.formatPiece(resp.data.data[i]));
             }
           }
-          return mappedPieces;
+          return {pieces: mappedPieces, nextPage: resp.data.meta.next_page};
         })
     );
   }

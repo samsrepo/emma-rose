@@ -2,11 +2,11 @@
   <div class="row mt-3">
     <div class="col-12 mb-5">
       <ngx-masonry [useImagesLoaded]="true" [options]="{ transitionDuration: 0, itemSelector: '.grid-item', columnWidth: 5 }">
-        <div *ngFor="let piece of pieces | async" ngxMasonryItem class="grid-item" [ngClass]="{ 'featured-item': piece.featured }">
+        <div *ngFor="let piece of pieces" ngxMasonryItem class="grid-item" [ngClass]="{ 'featured-item': piece.featured }">
           <img [routerLink]="['/piece', piece.slug]" [src]="piece.thumbnail"/>
        </div>
       </ngx-masonry>
     </div>
   </div>
-  <app-loading *ngIf="(pieces | async) == null"></app-loading>
+  <app-loading *ngIf="pieces == null"></app-loading>
 </div>
