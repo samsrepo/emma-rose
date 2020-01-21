@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 import {trigger, state, group, style, animate, transition} from '@angular/animations';
 import { About } from 'src/app/models/about';
 import { GalleryService } from 'src/app/gallery.service';
@@ -30,7 +30,7 @@ export class SideBarComponent implements OnInit {
   mobile = false;
   aboutData: Observable<About>;
 
-  constructor(private service: GalleryService) { }
+  constructor(private service: GalleryService, private eRef: ElementRef) { }
 
   ngOnInit() {
     // Check for screen size
@@ -58,6 +58,22 @@ export class SideBarComponent implements OnInit {
       // If desktop sized, show info
       this.showInfo = true;
       this.mobile = false;
+    }
+  }
+
+  // Toggle about text if in mobile view
+  toggleInfo(e) {
+    e.stopPropagation();
+    this.showInfo = !this.showInfo;
+  }
+
+  // Hide about info if click outside about text
+  @HostListener('document:click', ['$event'])
+  clickout(event) {
+    if(!this.eRef.nativeElement.contains(event.target)) {
+      if (this.mobile) {
+        this.showInfo = false;
+      }
     }
   }
 

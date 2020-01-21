@@ -7,7 +7,7 @@
     <p>Artist | Writer | Illustrator</p>
   </div>
   <div class="button-container d-md-none">
-    <button class="toggle-button" (click)="showInfo = !showInfo">
+    <button class="toggle-button" (click)="toggleInfo($event)">
         <i class="fa fas fa-chevron-down fa-5x" *ngIf="!showInfo" aria-hidden="true"> </i>
         <i class="fa fas fa-chevron-up fa-5x" *ngIf="showInfo" aria-hidden="true"> </i>
     </button>
