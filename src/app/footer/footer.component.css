@@ -7,8 +7,11 @@ p {
 }
 
 .rights-text {
-  font-family: 'Georgia', serif;
   margin-bottom: 0;
+}
+
+.owner-text {
+  font-weight: 700;
 }
 
 .cms-image-container {
