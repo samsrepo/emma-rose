@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { Piece } from 'src/app/models/piece';
 import { Observable } from 'rxjs';
 import { GalleryService } from 'src/app/gallery.service';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-gallery-container',
@@ -24,7 +25,7 @@ export class GalleryContainerComponent implements OnInit {
 
   ngOnInit() {
     // Setup our pieces observable
-     this.service.getPieces(this.nextPage).subscribe(resp => {
+     this.service.getPieces(this.nextPage).pipe(debounceTime(500)).subscribe(resp => {
       // Set our pieces property
       this.pieces = resp.pieces;
       // Set page to the next page
@@ -37,7 +38,7 @@ export class GalleryContainerComponent implements OnInit {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 1 && this.nextPage) {
       this.updateMasonryLayout = false;
       // Once we've hit the bottom of the page, load the next page if there's another
-      this.service.getPieces(this.nextPage).subscribe(resp => {
+      this.service.getPieces(this.nextPage).pipe(debounceTime(500)).subscribe(resp => {
         // Add the new page's pieces to the ones we have
         this.pieces = this.pieces.concat(resp.pieces);
         // Set the next page
