@@ -18,34 +18,12 @@ export class GalleryContainerComponent implements OnInit {
   // Main pieces property for gallery
   pieces: Piece[];
 
-  // Initialise the next page to 1 as it will be the first on load
-  nextPage = 1;
-
-  updateMasonryLayout = false;
-
   ngOnInit() {
     // Setup our pieces observable
-     this.service.getPieces(this.nextPage).pipe(debounceTime(500)).subscribe(resp => {
+     this.service.getPieces().pipe(debounceTime(500)).subscribe(pieces => {
       // Set our pieces property
-      this.pieces = resp.pieces;
-      // Set page to the next page
-      this.nextPage = resp.nextPage;
+      this.pieces = pieces;
      });
   }
-
-  @HostListener('window:scroll', [])
-  onScroll(): void {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 1 && this.nextPage) {
-      this.updateMasonryLayout = false;
-      // Once we've hit the bottom of the page, load the next page if there's another
-      this.service.getPieces(this.nextPage).pipe(debounceTime(500)).subscribe(resp => {
-        // Add the new page's pieces to the ones we have
-        this.pieces = this.pieces.concat(resp.pieces);
-        // Set the next page
-        this.nextPage = resp.nextPage;
-        this.updateMasonryLayout = true;
-      });
-    }
-}
 
 }
